@@ -3,7 +3,7 @@
 <Description of project> 
 
 ### Installing `pipenv` 
-This project uses [`pipenv`](https://pipenv-fork.readthedocs.io/en/latest/install.html#homebrew-installation-of-pipenv) to manage dependencies. Below are the needed steps to install pipenv and run the scraper scripts:
+This project uses [`pipenv`](https://pipenv.pypa.io/en/latest/) to manage dependencies. Below are the needed steps to install pipenv and run the scraper scripts:
 - If on Windows, download [Git Bash](https://gitforwindows.org/).
 - Install [Homebrew](https://brew.sh/) on MacOS and [Linuxbrew](https://docs.brew.sh/Homebrew-on-Linux) for Windows/Linux systems
 - Follow the instructions to install [`pipenv`](https://pipenv-fork.readthedocs.io/en/latest/install.html#homebrew-installation-of-pipenv) 
