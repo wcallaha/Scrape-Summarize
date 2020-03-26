@@ -60,8 +60,14 @@ def Articles(url_list):
 
 # This just works for NPR right now; different websites have different HTML formattings, 
 # so getting the url out of the homepage might/will require a distinct function
-def NPR():
+def NPR(output_type = "html"):
+# GB comment: One thing to keep in mind is how to generalize this script for other sites
+# For example, the arts variable, I assume "article" is a convention specific to NPR, which might not translate to other sites.
+
 	url = "https://npr.org"
+	valid_output_types = ["html", "local"]
+	if output_type not in valid_output_types:
+		raise ValueError("output type must be one of {valid_output_types}".format(**locals()))
 	page = requests.get(url).text
 	soup = BeautifulSoup(page, features = 'lxml')		
 	arts = soup.find_all("article")
@@ -80,8 +86,11 @@ def NPR():
 	ArticleDict = Articles(url_list)
 
 	# Can either write to local text editor or html page (default is html)
-	WriteHTML(ArticleDict)
-	#WriteLocal(ArticleDict)
+	if output_type == "html":
+		WriteHTML(ArticleDict)
+
+	elif output_type == "local":
+		WriteLocal(ArticleDict)
 
 def WriteLocal(ArticleDict):
 	name = "{}_Summary.txt".format(nowf)
@@ -122,4 +131,4 @@ def WriteHTML(ArticleDict):
 
 
 
-NPR()
+NPR("derp")
