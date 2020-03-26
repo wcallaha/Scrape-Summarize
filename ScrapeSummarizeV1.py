@@ -131,4 +131,4 @@ def WriteHTML(ArticleDict):
 
 
 
-NPR("derp")
+NPR()
