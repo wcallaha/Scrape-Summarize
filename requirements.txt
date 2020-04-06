@@ -1,0 +1,8 @@
+requests
+subprocess
+webbrowser
+os
+beautifulsoup
+gensim
+wikipedia
+numpy
